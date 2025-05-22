@@ -37,7 +37,7 @@ const Skills: React.FC = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         @keyframes progressAnimation {
           from { width: 0; }
           to { width: var(--final-width); }
