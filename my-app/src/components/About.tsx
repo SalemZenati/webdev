@@ -9,13 +9,13 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              About Salem Zenati
+              About Me!
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              I'm a software engineer and web developer with a passion for helping businesses in our community thrive in the digital world. I specialize in creating beautiful, functional websites that attract customers and drive growth.
+              My name is Salem Zenati, I'm a software engineer and web developer with a passion for helping businesses in our community thrive in the digital world. I specialize in creating beautiful, functional websites that attract customers and drive growth.
             </p>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              I take each website I create as if I'm starting a new art project. I make sure that you are 100% satisfied with the results before I even think of charging any money for it.
+              I treat each website project with utmost care and perfection. I make sure that you are 100% satisfied with the results and end up with a website you are proud of.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               My goal is simple: to help your business reach more customers, create a heightened sense of trust between your current customers and your business, and make a positive impact in the community.
@@ -40,7 +40,7 @@ const About: React.FC = () => {
                 <Users className="text-blue-600 mr-3 mt-1" size={20} />
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Local Focus</h3>
-                  <p className="text-gray-600 text-sm">Specialized in helping businesses in our community</p>
+                  <p className="text-gray-600 text-sm">Specialized in helping businesses in my community</p>
                 </div>
               </div>
               <div className="flex items-start">
