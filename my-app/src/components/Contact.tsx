@@ -25,23 +25,47 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setFormStatus({
-      submitted: true,
-      success: true,
-      message: 'Your message has been sent! I\'ll get back to you within 24 hours.'
-    });
-    
-    // Reset form after successful submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      business: '',
-      message: ''
-    });
+
+    try {
+      const response = await fetch('https://formspree.io/f/mdkgrbra', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: "Your message has been sent! I'll get back to you within 24 hours."
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          business: '',
+          message: ''
+        });
+      } else {
+        const errorData = await response.json();
+        setFormStatus({
+          submitted: true,
+          success: false,
+          message: errorData?.error || "Something went wrong. Please try again."
+        });
+      }
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: "Something went wrong. Please try again later."
+      });
+    }
   };
 
   return (

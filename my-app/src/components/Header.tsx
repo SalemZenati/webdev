@@ -34,21 +34,29 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header 
+    <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
+        scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <a 
-          href="#home" 
-          className="text-2xl font-bold tracking-tight"
+        <a
+          href="#home"
+          className="text-2xl font-bold tracking-tight flex items-center gap-1"
         >
-          <span className={`transition-colors duration-300 ${scrolled ? 'text-blue-700' : 'text-white'}`}>
-            Salem
+          <span
+            className={`transition-colors duration-300 ${
+              scrolled ? "text-blue-700" : "text-white"
+            }`}
+          >
+            Spring Ridge
           </span>
-          <span className={`transition-colors duration-300 ${scrolled ? 'text-gray-800' : 'text-blue-300'}`}>
-            Zenati
+          <span
+            className={`transition-colors duration-300 ${
+              scrolled ? "text-gray-800" : "text-blue-300"
+            }`}
+          >
+            Web Designs
           </span>
         </a>
 
@@ -59,7 +67,7 @@ const Header: React.FC = () => {
               key={index}
               href={link.href}
               className={`font-medium transition-colors duration-300 hover:text-blue-600 ${
-                scrolled ? 'text-gray-700' : 'text-white'
+                scrolled ? "text-gray-700" : "text-white"
               }`}
             >
               {link.title}
@@ -68,33 +76,35 @@ const Header: React.FC = () => {
         </nav>
 
         {/* Mobile menu button */}
-        <button 
+        <button
           className="md:hidden"
           onClick={toggleMenu}
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? (
-            <X 
-              size={24} 
+            <X
+              size={24}
               className={`transition-colors duration-300 ${
-                scrolled ? 'text-gray-800' : 'text-white'
-              }`} 
+                scrolled ? "text-gray-800" : "text-white"
+              }`}
             />
           ) : (
-            <Menu 
-              size={24} 
+            <Menu
+              size={24}
               className={`transition-colors duration-300 ${
-                scrolled ? 'text-gray-800' : 'text-white'
-              }`} 
+                scrolled ? "text-gray-800" : "text-white"
+              }`}
             />
           )}
         </button>
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-        isMenuOpen ? 'max-h-96 bg-white shadow-lg' : 'max-h-0'
-      }`}>
+      <div
+        className={`md:hidden transition-all duration-300 overflow-hidden ${
+          isMenuOpen ? "max-h-96 bg-white shadow-lg" : "max-h-0"
+        }`}
+      >
         <div className="container mx-auto px-4 py-3 flex flex-col space-y-4">
           {navLinks.map((link, index) => (
             <a

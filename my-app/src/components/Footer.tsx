@@ -10,33 +10,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="col-span-1 md:col-span-2">
             <a href="#home" className="text-2xl font-bold tracking-tight mb-4 block">
-              <span className="text-blue-400">Salem</span> Zenati
+              <span className="text-blue-400">Spring Ridge</span> Web Designs
             </a>
             <p className="text-gray-400 max-w-md mb-6">
               I help businesses in our local area succeed online with beautiful, functional websites that attract customers and increase revenue.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Github"
-              >
-                <Github size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
               <a 
                 href="mailto:contact@salemzenati.com" 
                 className="text-gray-400 hover:text-white transition-colors"
@@ -45,8 +24,7 @@ const Footer: React.FC = () => {
                 <Mail size={20} />
               </a>
             </div>
-          </div>
-          
+          </div>    
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -91,7 +69,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500">
-          <p>&copy; {currentYear} Salem Zenati. All rights reserved.</p>
+          <p>&copy; {currentYear} Spring Ridge Web Designs. All rights reserved.</p>
           <p className="mt-1 text-sm">
             Helping businesses thrive in the digital world
           </p>

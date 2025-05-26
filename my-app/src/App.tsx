@@ -16,7 +16,7 @@ function App() {
     initAnimations();
     
     // Update page title
-    document.title = "Salem Zenati | Web Developer for Businesses";
+    document.title = "Spring Ridge Web Designs";
   }, []);
 
   return (
