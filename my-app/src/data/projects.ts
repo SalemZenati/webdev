@@ -9,7 +9,7 @@ export const projects: Project[] = [
     title: "Breathe",
     description: "Created a complete website for students at San Jose State University to learn about meditation and mindfulness.",
     image: breatheImg,
-    link: "#"
+    link: ""
   },
   {
     id: 2,
@@ -20,8 +20,8 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Personal Portfolio Website",
-    description: "A personal portfolio website to showcase my projects and skills.",
+    title: "Power Washing Company Website",
+    description: "A professional website mockup for a power washing company to showcase their services and attract new customers.",
     image: portfolioImg,
     link: "#"
   }

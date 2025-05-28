@@ -13,7 +13,7 @@ const Portfolio: React.FC = () => {
             Websites that I've Built
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Here are some of the websites I've built for local businesses that have helped them reach more customers and grow their revenue.
+            Here are some of the websites I've built for clients as well as myself.
           </p>
         </div>
 
