@@ -111,13 +111,13 @@ const Header: React.FC = () => {
             : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="bg-white shadow-2xl border-t border-gray-100 backdrop-blur-lg">
+        <div className="bg-gradient-to-br from-blue-600/95 via-blue-700/95 to-blue-800/95 backdrop-blur-xl shadow-2xl border-t border-white/20">
           <nav className="container mx-auto px-4 py-6 flex flex-col">
             {navLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className={`text-gray-700 font-medium py-4 px-4 -mx-4 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 border-b border-gray-100 last:border-b-0 ${
+                className={`text-white font-medium py-4 px-4 -mx-4 rounded-lg hover:bg-white/20 transition-all duration-200 border-b border-white/10 last:border-b-0 ${
                   isMenuOpen ? 'animate-slide-in' : ''
                 }`}
                 style={{ animationDelay: `${index * 50}ms` }}
@@ -125,7 +125,7 @@ const Header: React.FC = () => {
               >
                 <span className="flex items-center justify-between">
                   {link.title}
-                  <span className="text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                 </span>
               </a>
             ))}
