@@ -24,11 +24,7 @@ const Pricing: React.FC = () => {
                 <span className="text-gray-600 ml-2">one-time</span>
               </div>
               <p className="text-gray-600 mb-6">
-<<<<<<< HEAD
                 Perfect for businesses who prefer a single upfront payment for their website. Pricing depends on complexity and features.
-=======
-                Perfect for businesses who prefer a single upfront payment for their website. Pricing depends on site complexity. 
->>>>>>> 9cb467e9cd3e537dea2568b83776d327052aa79c
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center text-gray-600">
@@ -76,11 +72,7 @@ const Pricing: React.FC = () => {
             <div className="p-8">
               <h3 className="text-2xl font-bold text-white mb-4">Monthly Subscription</h3>
               <div className="mb-6">
-<<<<<<< HEAD
                 <span className="text-4xl font-bold text-white">$50</span>
-=======
-                <span className="text-4xl font-bold text-white">$75</span>
->>>>>>> 9cb467e9cd3e537dea2568b83776d327052aa79c
                 <span className="text-blue-200 ml-2">/month</span>
               </div>
               <p className="text-blue-200 mb-6">

@@ -77,16 +77,20 @@ const Header: React.FC = () => {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden"
+          className={`md:hidden relative z-50 p-2 rounded-lg transition-all duration-300 ${
+            isMenuOpen
+              ? 'bg-blue-600 shadow-lg'
+              : scrolled
+                ? 'hover:bg-gray-100'
+                : 'hover:bg-white/10'
+          }`}
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? (
             <X
               size={24}
-              className={`transition-colors duration-300 ${
-                scrolled ? "text-gray-800" : "text-white"
-              }`}
+              className="text-white transition-transform duration-300 rotate-90"
             />
           ) : (
             <Menu
@@ -101,21 +105,31 @@ const Header: React.FC = () => {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? "max-h-96 bg-white shadow-lg" : "max-h-0"
+        className={`md:hidden fixed inset-x-0 top-[70px] transition-all duration-300 ${
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="container mx-auto px-4 py-3 flex flex-col space-y-4">
-          {navLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              className="text-gray-800 font-medium py-2 hover:text-blue-600 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.title}
-            </a>
-          ))}
+        <div className="bg-white shadow-2xl border-t border-gray-100 backdrop-blur-lg">
+          <nav className="container mx-auto px-4 py-6 flex flex-col">
+            {navLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className={`text-gray-700 font-medium py-4 px-4 -mx-4 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 border-b border-gray-100 last:border-b-0 ${
+                  isMenuOpen ? 'animate-slide-in' : ''
+                }`}
+                style={{ animationDelay: `${index * 50}ms` }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="flex items-center justify-between">
+                  {link.title}
+                  <span className="text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                </span>
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
     </header>
