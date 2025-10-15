@@ -15,12 +15,36 @@ export const toggleClassOnScroll = (element: HTMLElement, className: string): vo
   observer.observe(element);
 };
 
-// Smoothly scroll to element
+// Easing function for smooth scroll (ease-in-out)
+const easeInOutCubic = (t: number): number => {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+};
+
+// Smoothly scroll to element with custom easing
 export const scrollToElement = (elementId: string): void => {
   const element = document.getElementById(elementId);
   if (!element) return;
-  
-  element.scrollIntoView({ behavior: 'smooth' });
+
+  const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  const duration = 1200;
+  let startTime: number | null = null;
+
+  const animation = (currentTime: number) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const ease = easeInOutCubic(progress);
+
+    window.scrollTo(0, startPosition + distance * ease);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
 };
 
 // Initialize all animations
