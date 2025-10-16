@@ -6,7 +6,11 @@ const Services: React.FC = () => {
   // Dynamic icon rendering based on icon name
   const renderIcon = (iconName: string) => {
     const Icon = (LucideIcons as any)[iconName];
-    return Icon ? <Icon size={36} className="text-blue-600 mb-4" /> : null;
+    return Icon ? (
+      <div className="w-9 h-9 flex-shrink-0 mb-4">
+        <Icon size={36} className="text-blue-600 w-full h-full" />
+      </div>
+    ) : null;
   };
 
   return (
