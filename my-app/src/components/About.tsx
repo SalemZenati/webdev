@@ -55,10 +55,11 @@ const About: React.FC = () => {
           
           <div className="relative">
             <div className="bg-white p-6 rounded-lg shadow-lg relative z-10">
-              <img 
+              <img
                 src={selfieImg}
-                alt="Web Developer at work" 
-                className="rounded-lg shadow-sm w-full h-auto"
+                alt="Web Developer at work"
+                className="rounded-lg shadow-sm w-full h-auto max-w-full object-contain block"
+                style={{ maxHeight: '600px' }}
               />
             </div>
             <div 

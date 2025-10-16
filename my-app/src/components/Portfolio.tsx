@@ -38,10 +38,11 @@ const Portfolio: React.FC = () => {
             className="bg-white rounded-lg max-w-4xl w-full overflow-hidden shadow-xl"
             onClick={e => e.stopPropagation()}
           >
-            <img 
-              src={selectedProject.image} 
-              alt={selectedProject.title} 
-              className="w-full h-auto"
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              className="w-full h-auto max-w-full object-contain block"
+              style={{ maxHeight: '70vh' }}
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold text-gray-800 mb-2">
@@ -71,10 +72,10 @@ const ProjectCard: React.FC<{
   return (
     <div className="group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-white">
       <div className="relative overflow-hidden h-64">
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full max-w-full object-cover transition-transform duration-500 group-hover:scale-110 block"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end">
           <div className="p-6">
